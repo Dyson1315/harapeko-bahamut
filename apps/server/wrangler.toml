@@ -1,0 +1,14 @@
+name = "harapeko-bahamut-server"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+[durable_objects]
+bindings = [
+  { name = "GAME_ROOM", class_name = "GameRoom" },
+  { name = "MATCHMAKING_QUEUE", class_name = "MatchmakingQueue" }
+]
+
+[[migrations]]
+tag = "v1"
+new_classes = ["GameRoom", "MatchmakingQueue"]
